@@ -41,7 +41,15 @@ const characters = require('./swapi');
  *
  */
 
-function listAllCharacters() {}
+function listAllCharacters(characters) {
+  if(characters.length === 0){
+    throw "There is no characters"
+  }
+  const name = characters.map((character) => {
+    return character.name
+  })
+  return name
+}
 
 //UNCOMMENT THE LINES ONE AT A TIME BELOW TO TEST YOUR SOLUTION MANUALLY, THEN COMMENT BACK IN
 // console.log(listAllCharacters([]));
