@@ -69,7 +69,17 @@ function listAllCharacters(characters) {
  * No example for this one. You should be able to find the average at this point
  */
 
-function averageHeightOfAllCharacters() {}
+function averageHeightOfAllCharacters(characters) {
+  let total = 0 
+   characters.forEach((character) => {
+   total += Number(character.height)
+   
+  
+   
+  })
+  return total / characters.length
+}
+  
 
 //UNCOMMENT THE LINES ONE AT A TIME BELOW TO TEST YOUR SOLUTION MANUALLY, THEN COMMENT BACK IN
 //console.log(averageHeightOfAllCharacters(characters))
@@ -106,7 +116,15 @@ function averageHeightOfAllCharacters() {}
  *
  */
 
-function checkForEyeColor() {}
+function checkForEyeColor(characters, eyes) {
+  if(characters.length === 0){
+    throw "character is empty"
+  }
+  const some = characters.some((character) => {
+    return character.eye_color === eyes
+  })
+  return some
+}
 
 //UNCOMMENT THE LINES ONE AT A TIME BELOW TO TEST YOUR SOLUTION MANUALLY, THEN COMMENT BACK IN
 // console.log(checkForEyeColor([]));
@@ -158,7 +176,16 @@ function checkForEyeColor() {}
  *
  */
 
-function getAllCharactersCreatedAfterYear() {}
+function getAllCharactersCreatedAfterYear(characters, date) {
+  let newArray = []
+  const year = characters.filter((character) => {
+    let newDate = character.created.slice(0, 4)
+    if(newDate >= date){
+      return newArray.push(character.name)
+    }
+  })
+  return year
+}
 
 //UNCOMMENT THE LINES ONE AT A TIME BELOW TO TEST YOUR SOLUTION MANUALLY, THEN COMMENT BACK IN
 // console.log(getAllCharactersCreatedAfterYear(characters, 2016));
@@ -213,7 +240,11 @@ function getAllCharactersCreatedAfterYear() {}
    }
  */
 
-function getCharacterInMovie() {}
+   function getCharacterInMovie(characters, movies) {
+    
+    }
+  
+  
 
 //UNCOMMENT THE LINES ONE AT A TIME BELOW TO TEST YOUR SOLUTION MANUALLY, THEN COMMENT BACK IN
 // console.log(getCharacterInMovie(characters, ''));
@@ -233,10 +264,18 @@ function getCharacterInMovie() {}
  *  @returns {Array[]}} - returns an array of arrays.
  */
 
-function homeWorldValues() {}
+function homeWorldValues(characters) {
+  let newArray = []
+  const eyeColor = characters.filter((character) => {
+    if(character.eye_color === "yellow"){
+      return newArray.push(character)
+    }
+  })
+  return eyeColor
+}
 
 //UNCOMMENT THE LINE BELOW TO TEST YOUR SOLUTION MANUALLY, THEN COMMENT BACK IN
-console.log(homeWorldValues(characters));
+// console.log(homeWorldValues(characters));
 
 //*************************************************************************************************/
 // ****SECOND BONUS
