@@ -240,8 +240,13 @@ function getAllCharactersCreatedAfterYear(characters, date) {
    }
  */
 
-   function getCharacterInMovie(characters, movies) {
-    
+   function getCharacterInMovie(characters, movie) {
+    if(characters.length === 0){
+      throw "Characters array is empty"
+    }
+    const find = characters.find(character => character.films.includes(movie))
+    return find 
+      
     }
   
   
